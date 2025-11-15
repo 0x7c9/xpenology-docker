@@ -44,7 +44,7 @@ ENV DISK_OPTS_DEV="rotation_rate=1"
 ENV DISK_PATH="/xpy/diskvm"
 
 # Network
-ENV VM_NET_IP="192.168.30.31"
+ENV VM_NET_IP="20.20.20.21"
 ENV VM_NET_MAC="00:11:32:2C:A7:85"
 ENV VM_NET_DHCP="N"
 

@@ -26,17 +26,10 @@ services:
       - ./disk:/xpy/diskvm
       - ./bootloader:/xpy/bootloader
     networks:
-      dockervlan:
-        ipv4_address: 192.168.40.30
-   restart: always  # This will restart the container automatically
+      vlan:
+        ipv4_address: 192.168.30.40
+    restart: always  # Container will always restart if it crashes or is stopped
 
 networks:
-  dockervlan:
-    name: dockervlan
-    driver: macvlan
-    driver_opts:
-      parent: eno1
-    ipam:
-      config:
-        - subnet: "192.168.40.0/24"
-          gateway: "192.168.40.1"  # Ensure this is within the range of the subnet.
+  vlan:
+    external: true
